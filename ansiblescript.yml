@@ -1,0 +1,13 @@
+---
+- name: Installation 
+  become: true 
+  hosts: nginxd
+  tasks: 
+    - name: Run nginxd.sh 
+      script: nginxd.sh 
+- name: Installation in Slave
+  hosts: apached
+  become: true
+  tasks: 
+    - name: Run apached.sh 
+      script: apached.sh
